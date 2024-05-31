@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    image: hajer139/dash:v1
+    image: hajer139/dash
     command: python manage.py runserver 0.0.0.0:8091
     volumes:
       - .:/app
