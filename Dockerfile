@@ -16,7 +16,7 @@ RUN pip install -r requirements.txt
 RUN python manage.py makemigrations
 
 # Exposez le port utilisé par Django
-EXPOSE 8092
+EXPOSE 8093
 
 # Commande pour lancer l'application Django
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8092"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8093"]
