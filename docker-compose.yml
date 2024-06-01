@@ -3,11 +3,11 @@ version: '3'
 services:
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8092
+    command: python manage.py runserver 0.0.0.0:8093
     volumes:
       - .:/app
     ports:
-      - "8092:8092"
+      - "8093:8093"
     depends_on:
       - db
 
@@ -15,7 +15,7 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_DB: 'DashB'
-      POSTGRES_USER: 'postgres1'
+      POSTGRES_USER: 'postgres'
       POSTGRES_PASSWORD: '139'
     ports:
       - "5433:5432"
