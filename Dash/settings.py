@@ -80,7 +80,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'DashB',
-        'USER': 'postgres',
+        'USER': 'postgres1',
         'PASSWORD': '139', 
         'HOST': 'localhost',
         'PORT': '5432',
