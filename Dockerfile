@@ -7,6 +7,7 @@ WORKDIR /app
 COPY . /app
 
 # Installer les dépendances
+RUN apt-get update && apt-get install -y libpq-dev && pip install psycopg2-binary
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
