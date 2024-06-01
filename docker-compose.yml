@@ -1,16 +1,6 @@
 version: '3'
 
 services:
-  web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8093
-    volumes:
-      - .:/app
-    ports:
-      - "8093:8093"
-    depends_on:
-      - db
-
   db:
     image: postgres:latest
     environment:
@@ -21,7 +11,15 @@ services:
       - "5433:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
-
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8093
+    volumes:
+      - .:/app
+    ports:
+      - "8093:8093"
+    depends_on:
+      - db
 volumes:
   pgdata:
 
