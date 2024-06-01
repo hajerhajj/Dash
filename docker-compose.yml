@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    image: hajer139/dashdor
+    image: hajer139/dashdor:v1
     command: python manage.py runserver 0.0.0.0:8091
     volumes:
       - .:/app
@@ -18,4 +18,5 @@ services:
       POSTGRES_USER: 'postgres'
       POSTGRES_PASSWORD: '139'
     ports:
-      - "5432:5432"
+      - "5433:5432"
+
