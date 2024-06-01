@@ -1,8 +1,6 @@
-version: '3'
-
 services:
   web:
-    image: hajer139/dashdor:v1
+    build: .
     command: python manage.py runserver 0.0.0.0:8091
     volumes:
       - .:/app
@@ -15,8 +13,13 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_DB: 'DashB'
-      POSTGRES_USER: 'postgres'
+      POSTGRES_USER: 'postgres1'
       POSTGRES_PASSWORD: '139'
     ports:
-      - "5433:5432"
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
 
