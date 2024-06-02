@@ -13,11 +13,11 @@ services:
       - pgdata:/var/lib/postgresql/data
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8093
+    command: python manage.py runserver 0.0.0.0:8092
     volumes:
       - .:/app
     ports:
-      - "8093:8093"
+      - "8092:8092"
     depends_on:
       - db
 volumes:
