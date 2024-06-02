@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'DashB',
         'USER': 'postgres',
         'PASSWORD': '139', 
-        'HOST': 'db',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
