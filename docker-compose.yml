@@ -10,7 +10,7 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - ./data/db:/var/lib/postgresql/data
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8092
@@ -18,8 +18,12 @@ services:
       - .:/app
     ports:
       - "8092:8092"
+    environment:
+      DB_NAME: 'DashB'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: '139'
+    
     depends_on:
       - db
-volumes:
-  pgdata:
+
 
