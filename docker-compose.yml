@@ -2,27 +2,19 @@ version: '3'
 
 services:
   db:
-    image: postgres:latest
+    image: postgres
     environment:
       POSTGRES_DB: 'DashB'
       POSTGRES_USER: 'postgres'
       POSTGRES_PASSWORD: '139'
-    ports:
-      - "5433:5432"
-    volumes:
-      - ./data/db:/var/lib/postgresql/data
+
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8092
     volumes:
-      - .:/app
+      - .:/code
     ports:
       - "8092:8092"
-    environment:
-      DB_NAME: 'DashB'
-      POSTGRES_USER: 'postgres'
-      POSTGRES_PASSWORD: '139'
-    
     depends_on:
       - db
 
