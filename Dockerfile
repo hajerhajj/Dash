@@ -16,6 +16,7 @@ RUN pip install -r requirements.txt
 
 # Exécutez makemigrations lors de la construction de l'image
 RUN python manage.py makemigrations
+RUN python manage.py migrate
 
 # Exposez le port utilisé par Django
 EXPOSE 8092
