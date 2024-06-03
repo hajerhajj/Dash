@@ -3,7 +3,7 @@ services:
   db:
     image: postgres:latest
     environment:
-      POSTGRES_DB: DashB
+      POSTGRES_DB: dashb
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 139
 
@@ -17,7 +17,7 @@ services:
     depends_on:
       - db
     environment:
-      POSTGRES_DB: DashB
+      POSTGRES_DB: dashb
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 139
       POSTGRES_HOST: db
