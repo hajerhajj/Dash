@@ -17,5 +17,7 @@ services:
       - "8092:8092"
     depends_on:
       - db
+    environment:
+      DATABASE_URL: postgres://postgres:139@db:5432/DashB
 
 
