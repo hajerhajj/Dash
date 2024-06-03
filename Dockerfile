@@ -14,12 +14,8 @@ RUN apt-get update && apt-get install -y libpq-dev && pip install psycopg2-binar
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Exécutez makemigrations lors de la construction de l'image
-RUN python manage.py makemigrations
-RUN python manage.py migrate
-
 # Exposez le port utilisé par Django
 EXPOSE 8092
 
 # Commande pour lancer l'application Django
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8092"]
+CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8092"]
