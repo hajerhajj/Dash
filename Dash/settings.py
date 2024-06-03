@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'Dash.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB', 'DashB'),
-        'USER': os.getenv('POSTGRES_USER', 'postgres'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', '139'),
-        'HOST': os.getenv('POSTGRES_HOST', 'db'),
-        'PORT': os.getenv('POSTGRES_PORT', '5432'),
+        'NAME': 'DashB',
+        'USER': 'postgres',
+        'PASSWORD': '139',
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
 
