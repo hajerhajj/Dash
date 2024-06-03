@@ -1,16 +1,15 @@
 version: '3'
-
 services:
   db:
-    image: postgres
+    image: postgres:latest
     environment:
-      POSTGRES_DB: 'DashB'
-      POSTGRES_USER: 'postgres'
-      POSTGRES_PASSWORD: '139'
+      POSTGRES_DB: DashB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 139
 
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8092
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8092"
     volumes:
       - .:/app
     ports:
@@ -18,6 +17,8 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_URL: postgres://postgres:139@db:5432/DashB
-
-
+      POSTGRES_DB: DashB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 139
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
