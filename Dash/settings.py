@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'Dash.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DashB',
+        'NAME': 'dashb',
         'USER': 'postgres',
         'PASSWORD': '139',
         'HOST': 'db',
