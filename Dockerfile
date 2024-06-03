@@ -18,4 +18,4 @@ RUN pip install -r requirements.txt
 EXPOSE 8092
 
 # Commande pour lancer l'application Django
-CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8092"]
+CMD ["sh", "-c", "python manage.py runserver 0.0.0.0:8092"]
