@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'dashb',
         'USER': 'postgres',
         'PASSWORD': '139',
-        'HOST': 'db',
+        'HOST': '172.26.0.2',
         'PORT': '5432',
     }
 }
