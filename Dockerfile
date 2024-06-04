@@ -1,6 +1,7 @@
 # Utilisez l'image officielle de Python comme base
 FROM python:3.10
 
+ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Définissez le répertoire de travail dans le conteneur
